@@ -1,0 +1,15 @@
+name = PNW Insect
+description = Settings and configurations for the Insect handbook
+core = 7.x
+package = PNW
+version = 7.x-1.0
+project = pnw_insect
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = menu_block
+dependencies[] = search
+dependencies[] = system
+dependencies[] = views
+features[context][] = sidebar_first
+features[ctools][] = context:context:3
+features[features_api][] = api:1
