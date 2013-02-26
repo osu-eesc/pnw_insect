@@ -2,6 +2,7 @@ name = PNW Insect
 description = Settings and configurations for the Insect handbook
 core = 7.x
 package = PNW
+php = 5.2.4
 version = 7.x-1.0
 project = pnw_insect
 dependencies[] = context

@@ -18,7 +18,7 @@ function pnw_insect_menu_block_blocks() {
       'title_link'  => 0,
       'admin_title' => '2nd level main menu block',
       'level'       => 1,
-      'follow'      => active,
+      'follow'      => 'active',
       'depth'       => 0,
       'expanded'    => 0,
       'sort'        => 1,
@@ -29,7 +29,7 @@ function pnw_insect_menu_block_blocks() {
       'title_link'  => 0,
       'admin_title' => 'home page menu block',
       'level'       => 1,
-      'follow'      => child,
+      'follow'      => 'child',
       'depth'       => 0,
       'expanded'    => 0,
       'sort'        => 1,
@@ -222,5 +222,29 @@ function pnw_insect_menu_block_blocks() {
       'sort'        => 0,
     ),
   );
+}
+
+/**
+ * Implements hook_form_alter()
+ */
+function pnw_insect_form_alter(&$form, &$form_state, $form_id) {
+  
+  switch ($form_id) {
+    
+    case 'views_form_related_images_reorder_images': 
+
+      $form['actions']['submit']['#submit'][] = 'reorder_images_submit';
+      
+    break;
+
+  }
+}
+
+/**
+ * Redirects user to node view after reordering images
+ */
+function reorder_images_submit($form, &$form_state) {
+  drupal_set_message('Images reordered');
+  $form_state['redirect'] = 'node/' . $form_state['build_info']['args'][0]->args[0];
 }
 

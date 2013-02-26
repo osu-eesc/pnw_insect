@@ -20,7 +20,7 @@ function pnw_insect_context_default_contexts() {
     'path' => array(
       'values' => array(
         '~admin' => '~admin',
-        '~admin/' => '~admin/',
+        '~admin/*' => '~admin/*',
         '~node/*/edit' => '~node/*/edit',
       ),
     ),
