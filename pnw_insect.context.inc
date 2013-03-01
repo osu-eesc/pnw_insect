@@ -22,6 +22,7 @@ function pnw_insect_context_default_contexts() {
         '~admin' => '~admin',
         '~admin/*' => '~admin/*',
         '~node/*/edit' => '~node/*/edit',
+        '~batch*' => '~batch*',
       ),
     ),
   );
